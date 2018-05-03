@@ -22,12 +22,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         , GoogleMap.OnMyLocationClickListener {
 
 
-    private GoogleMap mMap;
+    public GoogleMap mMap;
+    // Add a marker in pasar  and move the camera
+    LatLng orooro = new LatLng(-7.974912, 112.6612992);
+    LatLng madyopuro = new LatLng(-7.9750328, 112.6615922);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        setContentView(R.layout.content_main);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -37,11 +40,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.addMarker(new MarkerOptions().position(new LatLng(170, 180)).title("Pasar Oro-Oro Dowo"));
+        // Move the camera instantly to hamburg with a zoom of 15.
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(orooro, 20));
+        // Zoom in, animating the camera.
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(20), 2000, null);
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(170, 180)).title("Pasar Madyopuro"));
+        // Move the camera instantly to hamburg with a zoom of 15.
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(madyopuro, 20));
+        // Zoom in, animating the camera.
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(20), 2000, null);
 
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED

@@ -10,9 +10,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
+    GoogleMap mMap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +35,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     @Override
@@ -85,5 +95,36 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+
+        // Add a marker in Sawojajar Traditional Market and move the camera
+        LatLng sawojajar = new LatLng(-7.9740128, 112.660809);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sawojajar, 20));
+        MarkerOptions marker1 = new MarkerOptions().title("Sawojajar Traditional Market").position(sawojajar);
+        mMap.addMarker(marker1);
+
+        // Add a marker in Pasar Oro-Oro Dowo  and move the camera
+        LatLng orooro = new LatLng(-7.9686506, 112.6260363);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(orooro, 20));
+        MarkerOptions marker2 = new MarkerOptions().title("Pasar Oro-Oro Dowo").position(orooro);
+        mMap.addMarker(marker2);
+
+        // Add a marker in Pasar Madyopuro  and move the camera
+        LatLng madyopuro = new LatLng(-7.9750328, 112.6615922);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(madyopuro, 20));
+        MarkerOptions marker3 = new MarkerOptions().title("Pasar Madyopuro").position(madyopuro);
+        mMap.addMarker(marker3);
+
+        // Add a marker in Pasar Madyopuro  and move the camera
+        LatLng klojen = new LatLng(-7.9750328, 112.6615922);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(madyopuro, 20));
+        MarkerOptions marker4 = new MarkerOptions().title("Klojen Traditional Market").position(klojen);
     }
 }
