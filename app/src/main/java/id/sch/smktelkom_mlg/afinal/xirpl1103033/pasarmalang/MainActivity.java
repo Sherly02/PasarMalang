@@ -1,12 +1,12 @@
 package id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -21,15 +21,22 @@ public class MainActivity extends AppCompatActivity {
             Fragment fragment;
             switch (item.getItemId()) {
                 case R.id.navigation_favorite:
-                    toolbar.setTitle("Favorite");
+                    toolbar.setTitle("Favorit");
+                    fragment = new FavoriteFragment();
+                    loadFragment(fragment);
                     return true;
                 case R.id.navigation_price:
                     toolbar.setTitle("Daftar Harga");
+                    fragment = new PriceFragment();
+                    loadFragment(fragment);
                     return true;
                 case R.id.navigation_map:
-                    toolbar.setTitle("Map");
+                    toolbar.setTitle("Lokasi");
+                    fragment = new MapFragment();
+                    loadFragment(fragment);
                     return true;
             }
+
             return false;
         }
     };
@@ -38,15 +45,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+        toolbar = getSupportActionBar();
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         toolbar.setTitle("Pasar Malang");
+        loadFragment(new PriceFragment());
 
     }
+
+    private void loadFragment(Fragment fragment) {
+        // load fragment
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
