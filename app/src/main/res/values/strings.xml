@@ -1,9 +1,7 @@
 <resources>
-    <string name="app_name">PasarMalang</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
+    <string name="app_name">Pasar Malang</string>
+    <string name="title_favourite">Favorit</string>
+    <string name="title_price">Daftar Harga</string>
+    <string name="title_map">Lokasi</string>
     <string name="action_settings">Settings</string>
 </resources>
