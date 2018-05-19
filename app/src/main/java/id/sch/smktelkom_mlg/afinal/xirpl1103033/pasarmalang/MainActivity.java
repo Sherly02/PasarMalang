@@ -1,6 +1,8 @@
 package id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang;
 
+import android.app.Fragment;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +13,26 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity {
 
     private ActionBar toolbar;
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment;
+            switch (item.getItemId()) {
+                case R.id.navigation_favorite:
+                    toolbar.setTitle("Favorite");
+                    return true;
+                case R.id.navigation_price:
+                    toolbar.setTitle("Daftar Harga");
+                    return true;
+                case R.id.navigation_map:
+                    toolbar.setTitle("Map");
+                    return true;
+            }
+            return false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

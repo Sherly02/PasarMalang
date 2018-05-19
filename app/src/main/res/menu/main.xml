@@ -9,17 +9,17 @@
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/navigation_shop"
+        android:id="@+id/navigation_favorite"
         android:icon="@drawable/ic_favorite_black_24dp"
         android:title="@string/title_favorite" />
 
     <item
-        android:id="@+id/navigation_gifts"
+        android:id="@+id/navigation_price"
         android:icon="@drawable/ic_monetization_on_black_24dp"
         android:title="@string/title_price" />
 
     <item
-        android:id="@+id/navigation_cart"
+        android:id="@+id/navigation_map"
         android:icon="@drawable/ic_place_black_24dp"
         android:title="@string/title_map" />
 
