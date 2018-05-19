@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        toolbar.setTitle("Daftar Harga");
+        toolbar.setTitle("Pasar Malang");
 
     }
 
