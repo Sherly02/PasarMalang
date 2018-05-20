@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        toolbar.setTitle("Pasar Malang");
+        getSupportActionBar().setTitle("Pasar Malang");
         loadFragment(new PriceFragment());
 
     }
@@ -63,8 +63,6 @@ public class MainActivity extends AppCompatActivity {
         transaction.addToBackStack(null);
         transaction.commit();
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
