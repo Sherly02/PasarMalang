@@ -3,6 +3,7 @@ package id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang.application;
 import android.app.Application;
 
 import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 
 /**
  * Created by batuh on 20/05/2018.
@@ -23,6 +24,14 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mInstance = this;
+    }
+
+    public RequestQueue getRequestQueue() {
+        if (mRequestQueue == null) {
+            mRequestQueue = Volley.newRequestQueue(getApplicationContext());
+        }
+
+        return mRequestQueue;
     }
 
 }
