@@ -15,6 +15,10 @@ public class MyApplication extends Application {
     private static MyApplication mInstance;
     private RequestQueue mRequestQueue;
 
+    public static synchronized MyApplication getInstance() {
+        return mInstance;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
