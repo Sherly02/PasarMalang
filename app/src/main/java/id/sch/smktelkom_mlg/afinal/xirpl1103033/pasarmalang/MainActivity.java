@@ -19,18 +19,18 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment;
             switch (item.getItemId()) {
-                case R.id.navigation_favorite:
-                    toolbar.setTitle("Favorit");
-                    fragment = new FavoriteFragment();
-                    loadFragment(fragment);
-                    return true;
                 case R.id.navigation_price:
-                    toolbar.setTitle("Daftar Harga");
+                    toolbar.setTitle("Pasar Malang");
                     fragment = new PriceFragment();
                     loadFragment(fragment);
                     return true;
+                case R.id.navigation_favorite:
+                    toolbar.setTitle("Pasar Malang - Favorit");
+                    fragment = new FavoriteFragment();
+                    loadFragment(fragment);
+                    return true;
                 case R.id.navigation_map:
-                    toolbar.setTitle("Lokasi");
+                    toolbar.setTitle("Pasar Malang - Lokasi");
                     fragment = new MapFragment();
                     loadFragment(fragment);
                     return true;
