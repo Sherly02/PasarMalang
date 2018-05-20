@@ -1,10 +1,12 @@
-package id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang;
+package id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang.R;
 
 public class PriceFragment extends Fragment {
 

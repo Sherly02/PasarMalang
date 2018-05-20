@@ -9,6 +9,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang.fragment.FavoriteFragment;
+import id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang.fragment.MapFragment;
+import id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang.fragment.PriceFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     private ActionBar toolbar;

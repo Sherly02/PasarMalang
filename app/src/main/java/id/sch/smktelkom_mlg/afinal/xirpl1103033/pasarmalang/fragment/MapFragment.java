@@ -1,4 +1,4 @@
-package id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang;
+package id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,13 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FavoriteFragment extends Fragment {
+import id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang.R;
 
-    public FavoriteFragment() {
+public class MapFragment extends Fragment {
+
+    public MapFragment() {
         // Required empty public constructor
     }
-    public static FavoriteFragment newInstance(String param1, String param2) {
-        FavoriteFragment fragment = new FavoriteFragment();
+
+    public static MapFragment newInstance(String param1, String param2) {
+        MapFragment fragment = new MapFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -27,7 +30,7 @@ public class FavoriteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorite, container, false);
+        return inflater.inflate(R.layout.fragment_map, container, false);
     }
 
 }
