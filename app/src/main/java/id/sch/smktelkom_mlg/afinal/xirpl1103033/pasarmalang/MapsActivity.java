@@ -93,5 +93,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMyLocationClick(@NonNull Location location) {
         Toast.makeText(this, "Lokasiku saat ini : " + location, Toast.LENGTH_LONG).show();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.option_get_place) {
+            showCurrentPlace();
+        }
+        return true;
+    }
 }
 
