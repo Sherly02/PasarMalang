@@ -177,6 +177,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    //menampilkan formulir yang memungkinkan pengguna untuk memilih tempat dari daftar tempat yang mungkin
     private void openPlacesDialog() {
         // Ask the user to choose the place where they are now.
         DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
