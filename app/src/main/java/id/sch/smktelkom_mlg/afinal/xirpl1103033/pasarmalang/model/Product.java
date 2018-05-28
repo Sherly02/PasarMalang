@@ -5,4 +5,12 @@ package id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang.model;
  */
 
 public class Product {
+
+    String name_product;
+    String price_today;
+    String price_yerterday;
+    String location_product;
+    String unit;
+
+
 }
