@@ -10,6 +10,9 @@ import id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang.R;
 
 public class PriceFragment extends Fragment {
 
+    private static final String TAG = PriceFragment.class.getSimpleName();
+    private static final String URL = "http://www.adminpas.tk/api/v1/products";
+
     public PriceFragment() {
         // Required empty public constructor
     }
