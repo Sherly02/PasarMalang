@@ -1,7 +1,6 @@
 package id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang;
 
 import android.Manifest;
-import android.app.AlertDialog;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
@@ -94,3 +93,4 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMyLocationClick(@NonNull Location location) {
         Toast.makeText(this, "Lokasiku saat ini : " + location, Toast.LENGTH_LONG).show();
     }
+}
