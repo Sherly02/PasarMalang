@@ -1,4 +1,4 @@
-package id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang.application;
+package id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang.app;
 
 import android.app.Application;
 import android.text.TextUtils;
@@ -6,10 +6,6 @@ import android.text.TextUtils;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
-
-/**
- * Created by batuh on 20/05/2018.
- */
 
 public class MyApplication extends Application {
 
@@ -37,7 +33,13 @@ public class MyApplication extends Application {
     }
 
     public <T> void addToRequestQueue(Request<T> req, String tag) {
+        // set the default tag if tag is empty
         req.setTag(TextUtils.isEmpty(tag) ? TAG : tag);
+        getRequestQueue().add(req);
+    }
+
+    public <T> void addToRequestQueue(Request<T> req) {
+        req.setTag(TAG);
         getRequestQueue().add(req);
     }
 
@@ -46,5 +48,5 @@ public class MyApplication extends Application {
             mRequestQueue.cancelAll(tag);
         }
     }
-
 }
+
