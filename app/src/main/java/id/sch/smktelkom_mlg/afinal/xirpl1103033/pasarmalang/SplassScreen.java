@@ -1,4 +1,8 @@
-package com.javapapers.android.introslider;
+package id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang;
+
+/**
+ * Created by win 10 on 5/30/2018.
+ */
 
 import android.content.Intent;
 import android.os.Bundle;

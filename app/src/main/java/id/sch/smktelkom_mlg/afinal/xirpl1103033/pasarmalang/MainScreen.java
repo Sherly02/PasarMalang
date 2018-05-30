@@ -1,4 +1,4 @@
-package com.javapapers.android.introslider;
+package id.sch.smktelkom_mlg.afinal.xirpl1103033.pasarmalang;
 
 import android.content.Context;
 import android.content.Intent;
