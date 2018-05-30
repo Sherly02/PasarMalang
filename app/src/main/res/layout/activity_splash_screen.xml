@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<RelativeLayout
-    android="http://schemas.android.com/apk/res/android"
-    android:background="#e78129"
+<RelativeLayout android:android="http://schemas.android.com/apk/res/android"
+    android:background="@android:color/holo_blue_light"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    xlmns=>
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -12,13 +11,5 @@
         android:layout_centerVertical="true"
         android:layout_height="150dp"
         android:layout_width="150dp"
-        android:src="@drawable/javapapers" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_height="150dp"
-        android:layout_width="150dp"
-        android:src="@drawable/javapapers" />
+        android:src="@drawable/icon" />
 </RelativeLayout>
